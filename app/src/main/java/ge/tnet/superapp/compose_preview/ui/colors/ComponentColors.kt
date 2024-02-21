@@ -1,4 +1,4 @@
-package ge.tnet.superapp.compose_preview.ui.theme
+package ge.tnet.superapp.compose_preview.ui.colors
 
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.Color

@@ -25,8 +25,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -47,15 +45,15 @@ fun SimpleCardComponent(
         ),
         shape = RoundedCornerShape(24.dp),
         elevation = CardDefaults.cardElevation(
-            defaultElevation = 8.dp
-        )
+            defaultElevation = 8.dp,
+        ),
     ) {
         
         if (state.expand) {
             Column(
                 modifier = Modifier
                     .padding(8.dp),
-                horizontalAlignment = Alignment.Start
+                horizontalAlignment = Alignment.Start,
             ) {
                 ImageContent(
                     imageSize = state.imageSize,
@@ -132,15 +130,14 @@ private fun ImageContent(
                     
                 }
             }
-            .background(imageBackgroundColor)
-    
+            .background(imageBackgroundColor),
     ) {
         Image(
             painter = painterResource(id = R.drawable.ic_image_cplaceholder),
             contentDescription = null,
             modifier = Modifier
                 .padding(if (expand) 24.dp else 8.dp)
-                .align(Alignment.Center)
+                .align(Alignment.Center),
         )
     }
 }
@@ -154,7 +151,7 @@ private fun TextContent(
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.Start,
-        verticalArrangement = Arrangement.spacedBy(4.dp)
+        verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         Text(
             text = title,
@@ -165,7 +162,6 @@ private fun TextContent(
         Text(
             text = description,
             color = AppTheme.colors.component.textColor,
-            //fontWeight = FontWeight(20),
         )
     }
 }
@@ -181,11 +177,11 @@ private fun ButtonComponent() {
                 brush = Brush.linearGradient(
                     colors = listOf(
                         Color(0xff336DF2),
-                        Color(0xff96B2F4)
+                        Color(0xff96B2F4),
                     )
-                )
+                ),
             ),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             text = "Action",
